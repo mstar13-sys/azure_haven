@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Azure Haven Resort offers luxury tropical experiences, elegant villas, and a premium island getaway in Palawan."
+    />
+    <title>Azure Haven Resort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a href="#home" class="brand" aria-label="Azure Haven Resort home">
+          <span class="brand-mark">A</span>
+          <span class="brand-text">Azure Haven Resort</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainMenu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-menu" id="mainMenu">
+          <a href="#home">Home</a>
+          <a href="#rooms">Rooms</a>
+          <a href="#experiences">Experiences</a>
+          <a href="#amenities">Amenities</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <button class="btn btn-primary nav-book-btn" type="button" data-open-booking>
+            Book Your Stay
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content reveal">
+          <p class="eyebrow">Escape. Relax. Experience Paradise.</p>
+          <h1>Escape to Paradise</h1>
+          <p class="hero-copy">
+            Experience peaceful mornings, breathtaking sunsets, and unforgettable moments at
+            Azure Haven Resort.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" type="button" data-open-booking>Book Your Stay</button>
+            <a href="#about" class="btn btn-secondary">Explore Our Resort</a>
+          </div>
+        </div>
+
+        <div class="container booking-panel reveal">
+          <form id="searchForm" class="booking-search" novalidate>
+            <div class="search-field">
+              <label for="checkinDate">Check-In</label>
+              <input id="checkinDate" name="checkinDate" type="date" required />
+            </div>
+            <div class="search-field">
+              <label for="checkoutDate">Check-Out</label>
+              <input id="checkoutDate" name="checkoutDate" type="date" required />
+            </div>
+            <div class="search-field">
+              <label for="guestCount">Guests</label>
+              <select id="guestCount" name="guestCount">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5+ Guests</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <label for="roomCount">Rooms</label>
+              <select id="roomCount" name="roomCount">
+                <option value="1" selected>1 Room</option>
+                <option value="2">2 Rooms</option>
+                <option value="3">3 Rooms</option>
+                <option value="4">4 Rooms</option>
+              </select>
+            </div>
+            <button class="btn btn-primary search-btn" type="submit">Check Availability</button>
+          </form>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+          <span>Scroll</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </section>
+
+      <section id="availability" class="availability-results container reveal">
+        <div class="section-intro small">Available Stays</div>
+        <div class="results-header">
+          <h2>Sample rooms for your preferred dates</h2>
+          <p id="resultsMeta"></p>
+        </div>
+        <div id="searchResults" class="search-results-grid"></div>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="container about-grid">
+          <div class="about-image reveal">
+            <img
+              src="https://images.unsplash.com/photo-1776762893257-fe5f9bd4b258?auto=format&fit=crop&w=900&q=80"
+              alt="Aerial view of tropical villas among palm trees" loading="lazy" decoding="async" />
+          </div>
+          <div class="about-content reveal">
+            <p class="section-intro">WELCOME TO AZURE HAVEN</p>
+            <h2>Where Luxury Meets Nature</h2>
+            <p>
+              Enveloped by turquoise waters, tropical gardens, and golden shorelines, Azure Haven
+              Resort is a calming escape designed for slower mornings, breathtaking sunset views,
+              and restorative island living.
+            </p>
+            <p>
+              Thoughtfully framed with refined architecture and warm hospitality, every stay feels
+              immersive, intimate, and beautifully effortless.
+            </p>
+            <div class="stat-grid">
+              <div>
+                <strong>24</strong>
+                <span>Luxury Villas</span>
+              </div>
+              <div>
+                <strong>12</strong>
+                <span>Exclusive Experiences</span>
+              </div>
+              <div>
+                <strong>4.9/5</strong>
+                <span>Guest Rating</span>
+              </div>
+            </div>
+            <button type="button" class="text-link text-button" data-info="story">Discover Our Story <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="rooms" class="section rooms-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-intro">The Collection</p>
+            <h2>Stay Your Way</h2>
+            <p class="section-subtitle">Thoughtfully designed spaces made for relaxation.</p>
+          </div>
+          <p class="mobile-swipe-hint" aria-hidden="true">Swipe to browse rooms <i class="fa-solid fa-arrow-right"></i></p>
+          <div class="room-grid mobile-card-track" tabindex="0" role="region" aria-label="Rooms, scroll horizontally to browse">
+            <article class="room-card reveal" data-room="ocean-view-suite">
+              <div class="room-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1777017246552-8b0e36b92d52?auto=format&fit=crop&w=900&q=80"
+                  alt="Ocean View Suite" loading="lazy" decoding="async" />
+              </div>
+              <div class="room-body">
+                <div class="room-title-row">
+                  <h3>Ocean View Suite</h3>
+                  <span class="room-badge">Best Seller</span>
+                </div>
+                <p class="room-description">Wake to wide ocean views in a calm, light-filled suite.</p>
+                <div class="room-meta">
+                  <span><i class="fa-solid fa-user"></i> 2 Guests</span>
+                  <span><i class="fa-solid fa-bed"></i> King Bed</span>
+                  <span><i class="fa-solid fa-water"></i> Ocean View</span>
+                  <span><i class="fa-solid fa-ruler-combined"></i> 45 m²</span>
+                </div>
+                <div class="room-price">
+                  Starting from <strong>₱6,500</strong> / night
+                </div>
+                <div class="room-actions">
+                  <button type="button" class="btn btn-ghost room-details-btn">View Details</button>
+                  <button type="button" class="btn btn-primary room-book-btn" data-room-id="ocean-view-suite">Book Now</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="room-card reveal" data-room="tropical-garden-villa">
+              <div class="room-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1661069540645-fda115a217ae?auto=format&fit=crop&w=900&q=80"
+                  alt="Tropical Garden Villa" loading="lazy" decoding="async" />
+              </div>
+              <div class="room-body">
+                <div class="room-title-row">
+                  <h3>Tropical Garden Villa</h3>
+                </div>
+                <p class="room-description">A spacious hideaway wrapped in private tropical greenery.</p>
+                <div class="room-meta">
+                  <span><i class="fa-solid fa-user"></i> 4 Guests</span>
+                  <span><i class="fa-solid fa-bed"></i> 2 Queen Beds</span>
+                  <span><i class="fa-solid fa-seedling"></i> Private Garden</span>
+                  <span><i class="fa-solid fa-ruler-combined"></i> 65 m²</span>
+                </div>
+                <div class="room-price">
+                  Starting from <strong>₱8,500</strong> / night
+                </div>
+                <div class="room-actions">
+                  <button type="button" class="btn btn-ghost room-details-btn">View Details</button>
+                  <button type="button" class="btn btn-primary room-book-btn" data-room-id="tropical-garden-villa">Book Now</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="room-card reveal" data-room="private-pool-villa">
+              <div class="room-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1774280960001-ce8169cfc38f?auto=format&fit=crop&w=900&q=80"
+                  alt="Private Pool Villa" loading="lazy" decoding="async" />
+              </div>
+              <div class="room-body">
+                <div class="room-title-row">
+                  <h3>Private Pool Villa</h3>
+                  <span class="room-badge premium">Signature</span>
+                </div>
+                <p class="room-description">Unwind beside your own pool with the sea just beyond.</p>
+                <div class="room-meta">
+                  <span><i class="fa-solid fa-user"></i> 4 Guests</span>
+                  <span><i class="fa-solid fa-bed"></i> King Bed</span>
+                  <span><i class="fa-solid fa-water"></i> Private Pool</span>
+                  <span><i class="fa-solid fa-sun"></i> Ocean View</span>
+                  <span><i class="fa-solid fa-ruler-combined"></i> 85 m²</span>
+                </div>
+                <div class="room-price">
+                  Starting from <strong>₱12,500</strong> / night
+                </div>
+                <div class="room-actions">
+                  <button type="button" class="btn btn-ghost room-details-btn">View Details</button>
+                  <button type="button" class="btn btn-primary room-book-btn" data-room-id="private-pool-villa">Book Now</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experiences" class="section experiences-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-intro">Beyond the Villa</p>
+            <h2>Unforgettable Experiences</h2>
+            <p class="section-subtitle">Moments crafted for every kind of traveler.</p>
+          </div>
+
+          <p class="mobile-swipe-hint" aria-hidden="true">Swipe to explore <i class="fa-solid fa-arrow-right"></i></p>
+          <div class="experience-grid mobile-card-track" tabindex="0" role="region" aria-label="Experiences, scroll horizontally to browse">
+            <article class="experience-card tall reveal" style="background-image: url('https://images.unsplash.com/photo-1771533679958-2e8cb675cabe?auto=format&fit=crop&w=900&q=80');">
+              <div class="experience-content">
+                <span class="experience-tag">Island Day</span>
+                <h3>Island Hopping</h3>
+                <p>Explore hidden coves and crystal-clear waters on a guided island adventure.</p>
+                <button type="button" class="experience-link" data-info="island">Explore <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </article>
+
+            <article class="experience-card reveal" style="background-image: url('https://images.unsplash.com/photo-1774281018832-c6df6eceec70?auto=format&fit=crop&w=900&q=80');">
+              <div class="experience-content">
+                <span class="experience-tag">Sunset</span>
+                <h3>Sunset Cruise</h3>
+                <p>Drift into golden-hour views with an unforgettable private ocean dinner.</p>
+                <button type="button" class="experience-link" data-info="cruise">Explore <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </article>
+
+            <article class="experience-card reveal" style="background-image: url('https://images.unsplash.com/photo-1781484847919-2dce4c021a38?auto=format&fit=crop&w=900&q=80');">
+              <div class="experience-content">
+                <span class="experience-tag">Reef</span>
+                <h3>Snorkeling</h3>
+                <p>Discover vibrant coral gardens and colorful marine life just offshore.</p>
+                <button type="button" class="experience-link" data-info="snorkeling">Explore <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </article>
+
+            <article class="experience-card reveal" style="background-image: url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80');">
+              <div class="experience-content">
+                <span class="experience-tag">Wellness</span>
+                <h3>Spa & Wellness</h3>
+                <p>Restore your balance with signature massage rituals and island healing.</p>
+                <button type="button" class="experience-link" data-info="spa">Explore <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </article>
+
+            <article class="experience-card reveal" style="background-image: url('https://images.unsplash.com/photo-1746138394984-5691db44df00?auto=format&fit=crop&w=900&q=80');">
+              <div class="experience-content">
+                <span class="experience-tag">Romance</span>
+                <h3>Romantic Dinner</h3>
+                <p>Set sail into a candlelit evening beneath a sky glowing with stars.</p>
+                <button type="button" class="experience-link" data-info="dinner">Explore <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </article>
+
+            <article class="experience-card tall reveal" style="background-image: url('https://images.unsplash.com/photo-1746260948447-c06796c0a901?auto=format&fit=crop&w=900&q=80');">
+              <div class="experience-content">
+                <span class="experience-tag">Adventure</span>
+                <h3>Kayaking</h3>
+                <p>Paddle across calm turquoise waters and enjoy the coastline from a new perspective.</p>
+                <button type="button" class="experience-link" data-info="kayaking">Explore <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="amenities" class="section amenities-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-intro">Considered Comforts</p>
+            <h2>Everything You Need to Unwind</h2>
+            <p class="section-subtitle">Thoughtful comforts designed to help you slow down.</p>
+          </div>
+
+          <div class="amenity-grid">
+            <div class="amenity-item reveal"><i class="fa-solid fa-water-ladder"></i><span>Infinity Pool</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-umbrella-beach"></i><span>Private Beach</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-wifi"></i><span>Free Wi-Fi</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-spa"></i><span>Spa & Wellness</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-utensils"></i><span>Restaurant & Bar</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-car-side"></i><span>Airport Transfer</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-dumbbell"></i><span>Fitness Center</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-person-swimming"></i><span>Water Activities</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-headset"></i><span>24/7 Guest Assistance</span></div>
+            <div class="amenity-item reveal"><i class="fa-solid fa-mug-saucer"></i><span>Complimentary Breakfast</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promo-banner">
+        <div class="promo-overlay"></div>
+        <div class="container promo-inner reveal">
+          <div>
+            <p class="section-intro">Luxury Escape</p>
+            <h2>Stay Longer, Experience More</h2>
+            <p>Enjoy up to 20% off when you stay 3 nights or more.</p>
+          </div>
+          <button type="button" class="btn btn-primary" data-open-booking data-offer="extended">View Special Offers</button>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-intro">The Gallery</p>
+            <h2>A Glimpse of Paradise</h2>
+            <p class="section-subtitle">Moments that invite you to slow down and stay awhile.</p>
+          </div>
+
+          <p class="mobile-swipe-hint" aria-hidden="true">Swipe to see more photos <i class="fa-solid fa-arrow-right"></i></p>
+          <div class="gallery-masonry mobile-card-track" tabindex="0" role="region" aria-label="Gallery photos, scroll horizontally to browse">
+            <figure class="gallery-item reveal large">
+              <img src="https://images.unsplash.com/photo-1771533680002-5210c217a16f?auto=format&fit=crop&w=900&q=80" alt="Palawan beach" data-gallery="beach" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1760943013869-65a30a4fafd1?auto=format&fit=crop&w=900&q=80" alt="Tropical resort pool" data-gallery="pool" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="gallery-item reveal tall">
+              <img src="https://images.unsplash.com/photo-1776762893257-fe5f9bd4b258?auto=format&fit=crop&w=900&q=80" alt="Villas among palms" data-gallery="villas" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1764397576341-30ccea0109c4?auto=format&fit=crop&w=900&q=80" alt="Beachside restaurant at sunset" data-gallery="restaurant" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1774281018832-c6df6eceec70?auto=format&fit=crop&w=900&q=80" alt="Sunset from a boat" data-gallery="sunset" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="gallery-item reveal large">
+              <img src="https://images.unsplash.com/photo-1774280960001-ce8169cfc38f?auto=format&fit=crop&w=900&q=80" alt="Tropical villa garden" data-gallery="garden" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="gallery-item reveal">
+              <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80" alt="Spa treatment" data-gallery="spa" loading="lazy" decoding="async" />
+            </figure>
+            <figure class="gallery-item reveal tall">
+              <img src="https://images.unsplash.com/photo-1746260948447-c06796c0a901?auto=format&fit=crop&w=900&q=80" alt="Kayaking in Palawan" data-gallery="activities" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials-section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-intro">Guest Stories</p>
+            <h2>Loved by Our Guests</h2>
+            <p class="section-subtitle">Memories that last long after checkout.</p>
+            <p class="demo-caption">Illustrative reviews for this fictional resort.</p>
+          </div>
+
+          <p class="mobile-swipe-hint" aria-hidden="true">Swipe to read more <i class="fa-solid fa-arrow-right"></i></p>
+          <div class="testimonial-grid mobile-card-track" tabindex="0" role="region" aria-label="Guest reviews, scroll horizontally to browse">
+            <article class="testimonial reveal">
+              <div class="stars">★★★★★</div>
+              <p>
+                “An absolutely beautiful resort. The staff were incredibly welcoming and the
+                sunset from our villa was unforgettable.”
+              </p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Sophia M." loading="lazy" decoding="async" />
+                <div>
+                  <strong>Sophia M.</strong>
+                  <span>Couples Retreat</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial reveal">
+              <div class="stars">★★★★★</div>
+              <p>
+                “Every detail felt elevated and serene. The private beach and warm hospitality made
+                our family getaway truly special.”
+              </p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Daniel R." loading="lazy" decoding="async" />
+                <div>
+                  <strong>Daniel R.</strong>
+                  <span>Family Vacation</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="testimonial reveal">
+              <div class="stars">★★★★★</div>
+              <p>
+                “The spa, dining, and sunset cruise exceeded expectations. It felt like a boutique
+                luxury hideaway in the middle of paradise.”
+              </p>
+              <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=200&q=80" alt="Maria L." loading="lazy" decoding="async" />
+                <div>
+                  <strong>Maria L.</strong>
+                  <span>Wellness Escape</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section location-section">
+        <div class="container location-grid">
+          <div class="location-content reveal">
+            <p class="section-intro">The Journey</p>
+            <h2>Find Your Escape</h2>
+            <p class="location-resort-name">Azure Haven Resort</p>
+            <p class="location-address">Palawan, Philippines</p>
+            <p class="transport-note">25 minutes from the nearest airport</p>
+            <div class="info-list">
+              <div><i class="fa-solid fa-location-dot"></i> Beachfront hideaway, Palawan</div>
+              <div><i class="fa-solid fa-phone"></i> +63 917 234 5567</div>
+              <div><i class="fa-solid fa-envelope"></i> hello@azurehavenresort.com</div>
+            </div>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=El%20Nido%2C%20Palawan%2C%20Philippines" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Get Directions</a>
+            <p class="map-note">Approximate El Nido area. Azure Haven is a fictional resort.</p>
+          </div>
+
+          <div class="map-card reveal">
+            <svg class="map-illustration" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrative map of El Nido and nearby islands, not to scale">
+              <rect width="600" height="420" fill="#cbded9" />
+              <path d="M600 0H415c-38 45-17 77-65 115-24 19-26 46-14 64 26 40 18 59-7 88-30 34-10 75 15 98l18 55h238Z" fill="#d5dfc5" />
+              <path d="M600 0H432c-30 38-17 77-60 113-26 22-27 45-12 69 24 38 13 69-8 94-22 27-11 63 19 92l18 52h211Z" fill="#e5ead8" />
+              <path d="M390 52c-22 34-9 48-39 79m25 61c17 38-10 58-25 81m15 51c4 20 19 40 22 56" fill="none" stroke="#f8f6f1" stroke-width="9" stroke-linecap="round" stroke-dasharray="1 3" />
+              <path d="M100 78c24-18 47-9 60 8 17 21-1 44-31 43-28-2-52-30-29-51ZM210 195c22-26 58-25 75 4 16 26-2 49-29 58-33 11-76-29-46-62ZM85 301c17-15 45-9 53 11 10 26-16 44-40 35-19-7-28-31-13-46Z" fill="#e5ead8" />
+              <path d="M80 157c17-8 32-7 46 3m38 153c20-2 28-9 38-19" fill="none" stroke="#edf2e7" stroke-width="7" stroke-linecap="round" />
+              <circle cx="375" cy="206" r="29" fill="rgba(18,59,74,.15)" />
+              <path d="M375 177a19 19 0 0 0-19 19c0 14 19 36 19 36s19-22 19-36a19 19 0 0 0-19-19Z" fill="#123b4a" />
+              <circle cx="375" cy="196" r="7" fill="#fff" />
+              <text x="404" y="202" fill="#123b4a" font-size="20" font-weight="700">El Nido</text>
+              <text x="60" y="230" fill="#507b79" font-size="16" letter-spacing="3">BACUIT BAY</text>
+              <text x="91" y="55" fill="#507b79" font-size="12" letter-spacing="2">PALAWAN</text>
+            </svg>
+            <div class="map-label">El Nido area · illustrative map</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section newsletter-section">
+        <div class="container newsletter-panel reveal">
+          <div>
+            <p class="section-intro">Island Notes</p>
+            <h2>Paradise Delivered to Your Inbox</h2>
+            <p>Be the first to discover exclusive offers, travel inspiration, and resort updates.</p>
+          </div>
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <input type="email" id="newsletterEmail" placeholder="Email address" aria-label="Email address" required />
+            <button type="submit" class="btn btn-primary subscribe-btn">Subscribe</button>
+          </form>
+          <p class="newsletter-note">Demo form — no email is collected or sent.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand footer-brand-wrap">
+            <span class="brand-mark">A</span>
+            <span class="brand-text">Azure Haven Resort</span>
+          </div>
+          <p>
+            A luxury island escape where warm hospitality, ocean breezes, and seamless comfort come
+            together.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Information</h3>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><button type="button" class="footer-link" data-info="faqs">FAQs</button></li>
+            <li><button type="button" class="footer-link" data-info="terms">Terms & Conditions</button></li>
+            <li><button type="button" class="footer-link" data-info="privacy">Privacy Policy</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li>+63 917 234 5567</li>
+            <li>hello@azurehavenresort.com</li>
+            <li>Palawan, Philippines</li>
+          </ul>
+          <div class="social-links">
+            <button type="button" aria-label="Facebook demo link" data-social="Facebook"><i class="fa-brands fa-facebook-f"></i></button>
+            <button type="button" aria-label="Instagram demo link" data-social="Instagram"><i class="fa-brands fa-instagram"></i></button>
+            <button type="button" aria-label="TikTok demo link" data-social="TikTok"><i class="fa-brands fa-tiktok"></i></button>
+            <button type="button" aria-label="YouTube demo link" data-social="YouTube"><i class="fa-brands fa-youtube"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2026 Azure Haven Resort. Demo website created for portfolio purposes. Photography from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="infoModal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-info></div>
+      <div class="modal-dialog info-dialog" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+        <button class="modal-close info-close" type="button" aria-label="Close details">×</button>
+        <div id="infoContent"></div>
+      </div>
+    </div>
+
+    <div id="bookingModal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+        <button class="modal-close" type="button" aria-label="Close booking modal">×</button>
+
+        <div class="booking-header">
+          <div>
+            <p class="section-intro small">Your Stay</p>
+            <h2 id="bookingTitle">Book Your Stay</h2>
+          </div>
+          <div class="booking-progress" aria-label="Booking progress">
+            <span class="progress-step active">1</span>
+            <span class="progress-step">2</span>
+            <span class="progress-step">3</span>
+            <span class="progress-step">4</span>
+          </div>
+        </div>
+
+        <div class="booking-step active" data-step="1">
+          <div class="form-grid">
+            <label>
+              <span>Check-in date</span>
+              <input id="modalCheckin" type="date" />
+            </label>
+            <label>
+              <span>Check-out date</span>
+              <input id="modalCheckout" type="date" />
+            </label>
+            <label>
+              <span>Guests</span>
+              <select id="modalGuests">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5+ Guests</option>
+              </select>
+            </label>
+            <label>
+              <span>Rooms</span>
+              <select id="modalRooms">
+                <option value="1" selected>1 Room</option>
+                <option value="2">2 Rooms</option>
+                <option value="3">3 Rooms</option>
+                <option value="4">4 Rooms</option>
+              </select>
+            </label>
+          </div>
+          <div class="step-meta">
+            <span id="stayNightCount">0 nights</span>
+            <span id="guestEstimateNote" hidden>5+ guests is estimated for five guests in this demo.</span>
+          </div>
+        </div>
+
+        <div class="booking-step" data-step="2">
+          <div id="bookingRoomOptions" class="booking-room-list"></div>
+        </div>
+
+        <div class="booking-step" data-step="3">
+          <form id="guestForm" class="guest-form" novalidate>
+            <div class="form-grid two-col">
+              <label>
+                <span>First Name</span>
+                <input type="text" id="firstName" required />
+              </label>
+              <label>
+                <span>Last Name</span>
+                <input type="text" id="lastName" required />
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" id="email" required />
+              </label>
+              <label>
+                <span>Phone Number</span>
+                <input type="tel" id="phone" required />
+              </label>
+              <label class="full-width">
+                <span>Country</span>
+                <input type="text" id="country" required />
+              </label>
+              <label class="full-width">
+                <span>Special Requests</span>
+                <textarea id="requests" rows="4" placeholder="Optional"></textarea>
+              </label>
+            </div>
+          </form>
+        </div>
+
+        <div class="booking-step" data-step="4">
+          <div class="summary-card">
+            <h3>Reservation Summary</h3>
+            <div class="summary-list">
+              <div><span>Room</span><strong id="summaryRoom">—</strong></div>
+              <div><span>Check-in</span><strong id="summaryCheckin">—</strong></div>
+              <div><span>Check-out</span><strong id="summaryCheckout">—</strong></div>
+              <div><span>Guests</span><strong id="summaryGuests">—</strong></div>
+              <div><span>Rooms</span><strong id="summaryRooms">—</strong></div>
+              <div><span>Number of nights</span><strong id="summaryNights">—</strong></div>
+              <div><span id="summaryRoomPriceLabel">Room price</span><strong id="summaryRoomPrice">—</strong></div>
+              <div id="summaryDiscountRow" hidden><span>Extended stay offer (20%)</span><strong id="summaryDiscount">—</strong></div>
+              <div><span>Taxes & Fees</span><strong id="summaryTaxes">—</strong></div>
+              <div class="summary-total"><span>Total</span><strong id="summaryTotal">—</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-step confirmation-step" data-step="5">
+          <div class="confirmation-card">
+            <div class="confirmation-icon">✓</div>
+            <h3>Your Reservation Has Been Confirmed</h3>
+            <p>
+              Thank you, <span id="confirmationName">Guest</span>. Your demo reservation at Azure
+              Haven Resort has been successfully created.
+            </p>
+            <div class="reference-box">
+              <span>Reservation Reference</span>
+              <strong id="confirmationReference">AHR-2026-00000</strong>
+            </div>
+            <div class="reservation-details">
+              <div><span>Check-in</span><strong id="confirmationCheckin">—</strong></div>
+              <div><span>Check-out</span><strong id="confirmationCheckout">—</strong></div>
+              <div><span>Room</span><strong id="confirmationRoom">—</strong></div>
+              <div><span>Rooms & guests</span><strong id="confirmationParty">—</strong></div>
+              <div><span>Total</span><strong id="confirmationTotal">—</strong></div>
+            </div>
+            <p class="demo-note">
+              This is a demo reservation and no actual booking or payment has been made.
+            </p>
+          </div>
+        </div>
+
+        <div class="booking-actions">
+          <button type="button" class="btn btn-ghost booking-back">Back</button>
+          <button type="button" class="btn btn-primary booking-next">Next</button>
+          <button type="button" class="btn btn-primary booking-confirm">Confirm Demo Booking</button>
+          <button type="button" class="btn btn-secondary booking-home">Back to Home</button>
+          <button type="button" class="btn btn-secondary booking-view">View Reservation</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="galleryLightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" type="button" aria-label="Close gallery lightbox">×</button>
+      <img src="" alt="Expanded resort view" loading="lazy" decoding="async" />
+    </div>
+
+    <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
